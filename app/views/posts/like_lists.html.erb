@@ -1,0 +1,6 @@
+いいね！している人一覧
+<% @likes.each do |like| %>
+    <div class = "like_users">
+        <%= like.user.nickname %>さん
+    </div>
+<% end %>

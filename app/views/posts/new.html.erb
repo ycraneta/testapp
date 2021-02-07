@@ -1,0 +1,17 @@
+<%= form_with model: @post, local: true do |f| %>
+    <div class = "title">
+        タイトル︰<%= f.text_field :title %>
+    </div>
+
+    本文    
+    <div class = "content">
+        <%= f.text_area :content%>
+    </div>
+
+    画像
+    <div class = "image">
+        <%= f.file_field :image%>
+    </div>
+
+    <%= f.submit "投稿する" %>
+<% end %>

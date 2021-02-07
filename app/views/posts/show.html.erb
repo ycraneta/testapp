@@ -1,0 +1,28 @@
+<div class = "nickname">
+    ニックネーム︰<%= @post.user.nickname%>
+</div>
+
+<div class = "title">
+    タイトル︰<%= @post.title%>
+</div>
+
+<div class = "content">
+   本文︰<%= @post.content%>
+</div>
+
+画像
+<div class = "image">
+    <%= image_tag @post.image %>
+</div>
+
+<% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+    <div id = "like_btn" style = "background-color: red; border: 1px solid; width: 10px; height: 10px;">
+    </div>
+<% else %>
+    <div id = "like_btn" style = "background-color: white; border: 1px solid; width: 10px; height: 10px;">
+    </div>
+<% end %>
+
+<div id = "likes">
+    <%= link_to "#{@post.likes.length}", like_lists_post_path(@post.id) %>人が いいね！ しています｡
+</div>
