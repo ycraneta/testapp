@@ -49,7 +49,7 @@ class PostsController < ApplicationController
         else
             Like.create(user_id: current_user.id, post_id: @post.id)
             like_count = @post.likes.length
-            render json: {count: like_count}
+            render json: {count: like_count, id: @post.id}
         end
     end
 
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
         like = Like.find_by(user_id: current_user.id, post_id: @post.id)
         like.destroy
         like_count = @post.likes.length
-        render json: {count: like_count}
+        render json: {count: like_count, id: @post.id}
     end
 
     def like_lists

@@ -27,7 +27,10 @@
                             XHR.onload = () => {
                                 if (XHR.response) {
                                     likes.innerHTML = `
-                                        ${XHR.response.count}人が いいね！ しています｡
+                                        <a href= "/posts/${XHR.response.id}/like_lists">
+                                            ${XHR.response.count}
+                                        </a>
+                                        人が いいね！ しています｡
                                     `
                                 } 
                             }
@@ -52,7 +55,10 @@
                             XHR.onload = () => {
                                 if (XHR.response) {
                                     likes.innerHTML = `
-                                        ${XHR.response.count}人が いいね！ しています｡
+                                        <a href= "/posts/${XHR.response.id}/like_lists">
+                                            ${XHR.response.count}
+                                        </a>
+                                        人が いいね！ しています｡
                                     `
                                 } 
                             }
